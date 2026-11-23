@@ -17,6 +17,7 @@ import Login from './pages/Login'
 import RequireAuth from './components/RequireAuth'
 import Casilleros from './pages/Casilleros'
 import Balance from './pages/Balance'
+import Pendientes from './pages/Pendientes'
 import './App.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="ordenes" element={<Ordenes />} />
         <Route path="casilleros" element={<Casilleros />} />
         <Route path="balances" element={<Balance />} />
+        <Route path="pendientes" element={<Pendientes />} />
         <Route path="mantenimientos/clientes" element={<Clientes />} />
         <Route path="mantenimientos/productos" element={<Productos />} />
         <Route path="mantenimientos/estados" element={<Estados />} />
