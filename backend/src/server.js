@@ -113,6 +113,13 @@ app.use('/api/balances', crudRouter({
   readOnly: auditoria,
 }))
 
+// ===== Pendientes (pending_tasks): tablero tipo post-it =====
+app.use('/api/pending-tasks', crudRouter({
+  table: 'pending_tasks',
+  columns: ['title', 'description', 'status_id', 'color', 'active'],
+  readOnly: auditoria,
+}))
+
 // ===== Envíos (shipments) =====
 app.use('/api/shipments', crudRouter({
   table: 'shipments',

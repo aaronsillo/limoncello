@@ -4,7 +4,7 @@ import { useAuth } from '../auth/AuthContext'
 
 function Sidebar() {
   const { user, logout } = useAuth()
-  const [mantenimientosOpen, setMantenimientosOpen] = useState(true)
+  const [mantenimientosOpen, setMantenimientosOpen] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
 
   return (
@@ -45,6 +45,9 @@ function Sidebar() {
           </NavLink>
           <NavLink to="/balances" className="nav-item">
             Balances
+          </NavLink>
+          <NavLink to="/pendientes" className="nav-item">
+            Pendientes
           </NavLink>
 
           <div className="nav-group">

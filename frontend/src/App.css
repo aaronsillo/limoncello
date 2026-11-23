@@ -1376,3 +1376,140 @@
   background: #dc2626;
   margin-left: 12px;
 }
+
+/* ===== Pendientes: tablero de post-its ===== */
+/* Pocas columnas: se reparten el ancho en vez de quedar angostas */
+.postit-board .board-column {
+  flex: 1 1 340px;
+  min-width: 300px;
+}
+
+.postit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 14px;
+}
+
+.postit {
+  --papel: #fde68a;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 150px;
+  padding: 12px 12px 8px;
+  background: var(--papel);
+  color: #1f2937;
+  border-radius: 2px 2px 14px 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 8px -2px;
+  transform: rotate(var(--giro, 0deg));
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: grab;
+}
+
+.postit:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 8px 14px -4px;
+}
+
+.postit:active {
+  cursor: grabbing;
+}
+
+.postit-yellow {
+  --papel: #fde68a;
+}
+
+.postit-pink {
+  --papel: #fbcfe8;
+}
+
+.postit-blue {
+  --papel: #bfdbfe;
+}
+
+.postit-green {
+  --papel: #bbf7d0;
+}
+
+.postit-orange {
+  --papel: #fed7aa;
+}
+
+.postit-title {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.postit-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.postit-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: auto;
+  font-size: 11px;
+  color: rgba(31, 41, 55, 0.7);
+}
+
+.postit-move {
+  max-width: 105px;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 2px 4px;
+  border: 1px solid rgba(31, 41, 55, 0.25);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.postit-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.postit-btn {
+  flex: 1;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 6px;
+  border: 1px solid rgba(31, 41, 55, 0.25);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.postit-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Selector de color del formulario */
+.postit-colors {
+  display: flex;
+  gap: 10px;
+}
+
+.postit-swatch {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: var(--papel);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px;
+}
+
+.postit-swatch.selected {
+  border-color: var(--text-h);
+}
