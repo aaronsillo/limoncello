@@ -16,6 +16,7 @@ const TIPOS = [
   { value: 3, label: 'Detalle de orden' },
   { value: 4, label: 'Live' },
   { value: 5, label: 'Casillero' },
+  { value: 6, label: 'Pendientes' },
 ]
 
 const etiquetaTipo = (valor) => {
